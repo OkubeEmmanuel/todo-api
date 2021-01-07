@@ -23,6 +23,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::middleware('auth:api')->group(function () {
     Route::prefix('todo')->group( function () {
         Route::get('', [TodoController::class, 'index']);
+        Route::get('{todo}', [TodoController::class, 'show']);
         Route::post('new', [TodoController::class, 'store']);
         Route::put('update/{todo}', [TodoController::class, 'update']);
         Route::delete('delete/{todo}', [TodoController::class, 'destroy']);
