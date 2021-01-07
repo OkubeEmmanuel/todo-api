@@ -24,7 +24,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('todo')->group( function () {
         Route::get('', [TodoController::class, 'index']);
         Route::post('new', [TodoController::class, 'store']);
-        Route::put('update/{put}', [TodoController::class, 'update']);
+        Route::put('update/{todo}', [TodoController::class, 'update']);
         Route::delete('delete/{todo}', [TodoController::class, 'destroy']);
         Route::patch('completed/{todo}', [TodoController::class, 'taskCompleted']);
         Route::patch('notcompleted/{todo}', [TodoController::class, 'taskNotCompleted']);
